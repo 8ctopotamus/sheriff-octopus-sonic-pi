@@ -1,6 +1,32 @@
 use_bpm(76)
 
 in_thread do
+  use_synth :blade
+  live_loop :lead do
+    # phrase 1
+    sleep 2.5
+    play :As3, sustain: 0.5
+    sleep 0.5
+    play :G3, sustain: 0.5
+    sleep 0.5
+    play :C4, sustain: 1
+    sleep 1
+    play :As3, sustain: 1
+    sleep 3.5
+    # phrase 2
+    sleep 2.5
+    play :As3, sustain: 0.5
+    sleep 0.5
+    play :G3, sustain: 0.5
+    sleep 0.5
+    play :As3, sustain: 0.5
+    sleep 0.25
+    play :G3, sustain: 0.8
+    sleep 0.75
+    play :F3, sustain: 1
+    sleep 3.5
+  end
+  
   live_loop :bassdrum do
     sample :drum_bass_hard
     sleep 2.5
@@ -21,23 +47,42 @@ in_thread do
     sleep 0.5
   end
   
-  use_synth :pretty_bell
-  live_loop :intro_basee do
-    play :As3
+  live_loop :intro_bass do
+    # phrase 1
+    use_synth :pretty_bell
+    play :As2, sustain: 0.8
     sleep 1
-    play :C4
+    play :C3, sustain: 0.8
     sleep 1.75
-    play :As3
+    play :As2
     sleep 0.25
-    play :C4
+    play :C3
     sleep 0.25
-    play :As3
+    play :As2
     sleep 0.25
-    play :G3
+    play :G2
     sleep 0.5
-    play :F3
+    play :F2, sustain: 1
     sleep 1
-    play :D3
+    play :D2, sustain: 2
+    sleep 3
+    # phrase 2
+    use_synth :dtri
+    play :As1, sustain: 0.3
+    sleep 1
+    play :C2, sustain: 0.3
+    sleep 1.75
+    play :As1
+    sleep 0.25
+    play :C2
+    sleep 0.25
+    play :As1
+    sleep 0.25
+    play :G1
+    sleep 0.5
+    play :F1, sustain: 0.6
+    sleep 1
+    play :D1, sustain: 0.6
     sleep 3
   end
 end
