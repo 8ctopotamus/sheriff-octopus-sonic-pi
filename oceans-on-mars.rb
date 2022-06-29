@@ -12,7 +12,7 @@ in_thread(name: :bassdrum) do
 end
 
 in_thread(name: :snare)  do
-  with_fx :echo, phase: 0.25 do
+  with_fx :echo, phase: 0.75 do
     live_loop :snare do
       sleep 1
       sample :drum_snare_hard
